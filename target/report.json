@@ -1,0 +1,141 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "User on the Login Page",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2021-06-23T12:32:45.920Z",
+        "before": [
+          {
+            "result": {
+              "duration": 13735000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.init()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1411000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.init()"
+            }
+          }
+        ],
+        "line": 24,
+        "name": "Invalid Login Test",
+        "description": "",
+        "id": "login-verification;invalid-login-test;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 169000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.closure()"
+            }
+          },
+          {
+            "result": {
+              "duration": 86000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.closure()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 11711000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Navigate To Loginpage",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.navigate_to_loginpage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1087000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enter correct username \"rishi.khanna786@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"rishi.khanna786@gmail.com\"",
+                  "offset": 28
+                }
+              ],
+              "location": "stepdefinition.LoginWorkflow.user_enter_correct_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 94000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User enter incorrect password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_enter_incorrect_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Message displayed Wrong UserName \u0026 Password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.message_displayed_wrong_user_name_password()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User is not logged-in.",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_is_not_logged_in()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke"
+          }
+        ]
+      }
+    ],
+    "name": "Login Verification",
+    "description": "Description: This will test all login related scenario\u0027s",
+    "id": "login-verification",
+    "keyword": "Feature",
+    "uri": "file:src/main/java/feature/LoginTest.feature",
+    "tags": []
+  }
+]
