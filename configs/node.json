@@ -28,7 +28,7 @@
   ],
   "proxy": "org.openqa.grid.selenium.proxy.DefaultRemoteProxy",
     "role": "node",
-    "host": "169.254.24.92",
+    "host": "xxxx",
     "port": 9090,
 
     "maxSession": 5,
@@ -41,7 +41,7 @@
     "debug": false,
 
     "register": true,
-    "hub": "http://169.254.24.92:9090",
+    "hub": "xxxx",
     "servlets" : [],
     "withoutServlets": [],
     "custom": {}

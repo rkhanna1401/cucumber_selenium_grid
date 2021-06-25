@@ -31,7 +31,7 @@ public class HubNodeConfiguration {
 
 		GridNodeConfiguration gridNodeConfig = new GridNodeConfiguration();
 		gridNodeConfig.hub = "http://127.0.0.1:4444/grid/register";
-		gridNodeConfig.host = "192.168.29.227"; //my ip address
+		gridNodeConfig.host = "xxxx"; //my ip address
 		gridNodeConfig.port = 5566;
 		gridNodeConfig.role = "webdriver";
 		RegistrationRequest req = RegistrationRequest.build(gridNodeConfig);
