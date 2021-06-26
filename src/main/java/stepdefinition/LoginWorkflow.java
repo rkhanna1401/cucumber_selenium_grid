@@ -1,12 +1,8 @@
 package stepdefinition;
 
-import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import Utils.GenericUtils;
 import Utils.JsonUtils;
 import WebdriverBase.GridDriverManager;
-import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -93,7 +89,7 @@ public class LoginWorkflow {
 
 	}
 
-	@After
+	//@After
 	public void closure() {
 		driver.quit();
 	}

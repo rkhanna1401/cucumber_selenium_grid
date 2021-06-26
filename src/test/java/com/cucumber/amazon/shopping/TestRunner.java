@@ -1,10 +1,10 @@
 package com.cucumber.amazon.shopping;
 
-import org.junit.runner.RunWith;
-import io.cucumber.junit.Cucumber;
+import org.testng.annotations.Test;
+import WebdriverBase.CustomAbstractTestNGCucumberRunner;
 import io.cucumber.junit.CucumberOptions;
 
-@RunWith(Cucumber.class)
+
 @CucumberOptions
 (
 	
@@ -16,7 +16,8 @@ import io.cucumber.junit.CucumberOptions;
 	//	tags = "@sanity and @negative and @regression and not @smoke"
 		)
 
-public class TestRunner {
+@Test
+public class TestRunner extends CustomAbstractTestNGCucumberRunner{
 
 }
 

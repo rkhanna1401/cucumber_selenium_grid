@@ -1,4 +1,4 @@
 {
-"huburl":"http://localhost:4444/grid/register",
+"huburl":"http://localhost:4444/wd/hub",
 "baseurl":"http://amazon.in"
 }

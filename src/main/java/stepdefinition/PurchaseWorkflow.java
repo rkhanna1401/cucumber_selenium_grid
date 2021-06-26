@@ -5,14 +5,11 @@ import org.openqa.selenium.WebDriver;
 import Utils.GenericUtils;
 import Utils.JsonUtils;
 import WebdriverBase.GridDriverManager;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import webpages.BasePage;
 import webpages.HomePage;
-import webpages.LoginPage;
 import webpages.ProductPage;
 
 /**
@@ -33,7 +30,7 @@ public class PurchaseWorkflow {
 	//@Before
 	public void init() throws Exception {
 		gridDriverManager = new GridDriverManager();
-		driver = gridDriverManager.getDriver("Chrome", "WINDOWS");
+		driver = gridDriverManager.getDriver();
 		baseWorkflow = new BaseWorkflow(driver);
 		basePage = new BasePage(driver);
 		homePage = new HomePage(driver);

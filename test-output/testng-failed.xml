@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <test thread-count="3" name="SmokeTest - Chrome Browser(failed)" parallel="methods">
     <classes>
       <class name="com.cucumber.amazon.shopping.TestRunner">
         <methods>
-          <include name="setUpClass"/>
-          <include name="runScenario"/>
           <include name="tearDownClass"/>
+          <include name="tearDown"/>
+          <include name="setUpClass"/>
+          <include name="initServer"/>
+          <include name="scenario" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.cucumber.amazon.shopping.TestRunner -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- SmokeTest - Chrome Browser(failed) -->
+</suite> <!-- Failed suite [Suite] -->

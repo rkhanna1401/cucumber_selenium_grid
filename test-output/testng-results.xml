@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8" started-at="2021-06-24T18:20:12 IST" finished-at="2021-06-24T18:20:12 IST">
+  <suite name="Suite" duration-ms="44989" started-at="2021-06-26T20:28:57 IST" finished-at="2021-06-26T20:29:42 IST">
     <groups>
+      <group name="smoke">
+        <method signature="CustomAbstractTestNGCucumberRunner.scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@569cfc36]" name="scenario" class="WebdriverBase.CustomAbstractTestNGCucumberRunner"/>
+      </group> <!-- smoke -->
     </groups>
-    <test name="Default test" duration-ms="8" started-at="2021-06-24T18:20:12 IST" finished-at="2021-06-24T18:20:12 IST">
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    <test name="SmokeTest - Chrome Browser" duration-ms="44989" started-at="2021-06-26T20:28:57 IST" finished-at="2021-06-26T20:29:42 IST">
+      <class name="com.cucumber.amazon.shopping.TestRunner">
+        <test-method status="PASS" signature="initServer()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@569cfc36]" name="initServer" is-config="true" duration-ms="6111" started-at="2021-06-26T20:28:51 IST" finished-at="2021-06-26T20:28:57 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initServer -->
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@569cfc36]" name="setUpClass" is-config="true" duration-ms="317" started-at="2021-06-26T20:28:57 IST" finished-at="2021-06-26T20:28:58 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@569cfc36]" name="scenario" duration-ms="44570" started-at="2021-06-26T20:28:58 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-06-26T20:29:42 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid Login Test"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login Verification]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method status="PASS" signature="scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@569cfc36]" name="scenario" duration-ms="37547" started-at="2021-06-26T20:28:58 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-06-26T20:29:35 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid Login Test"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login Verification]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@569cfc36]" name="tearDownClass" is-config="true" duration-ms="76" started-at="2021-06-26T20:29:42 IST" finished-at="2021-06-26T20:29:42 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@569cfc36]" name="tearDown" is-config="true" duration-ms="240" started-at="2021-06-26T20:29:47 IST" finished-at="2021-06-26T20:29:47 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.cucumber.amazon.shopping.TestRunner -->
+    </test> <!-- SmokeTest - Chrome Browser -->
+  </suite> <!-- Suite -->
 </testng-results>

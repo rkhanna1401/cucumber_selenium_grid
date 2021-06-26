@@ -11,41 +11,29 @@
         "steps": []
       },
       {
-        "start_timestamp": "2021-06-25T07:47:05.105Z",
+        "start_timestamp": "2021-06-26T14:58:58.119Z",
         "before": [
           {
             "result": {
-              "error_message": "org.openqa.selenium.WebDriverException: Error forwarding the new session Empty pool of VM for setup Capabilities {acceptSslCerts: true, browserName: chrome, platform: macOS 10.14, version: 91.0.4472.114}\nCommand duration or timeout: 42 milliseconds\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Rishis-MacBook-Pro.local\u0027, ip: \u00272405:201:d001:6bfe:70b1:fe5b:d770:2b1d%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.14.6\u0027, java.version: \u00271.8.0_221\u0027\nDriver info: driver.version: RemoteWebDriver\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)\n\tat org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)\n\tat org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$errorHandler$0(JsonWireProtocolResponse.java:54)\n\tat org.openqa.selenium.remote.HandshakeResponse.lambda$getResponseFunction$0(HandshakeResponse.java:30)\n\tat org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:126)\n\tat java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)\n\tat java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)\n\tat java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:126)\n\tat java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:499)\n\tat java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:486)\n\tat java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)\n\tat java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)\n\tat java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\n\tat java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:464)\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:128)\n\tat org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)\n\tat org.openqa.selenium.remote.RemoteWebDriver.\u003cinit\u003e(RemoteWebDriver.java:131)\n\tat org.openqa.selenium.remote.RemoteWebDriver.\u003cinit\u003e(RemoteWebDriver.java:144)\n\tat WebdriverBase.GridDriverManager.setDriver(GridDriverManager.java:163)\n\tat WebdriverBase.GridDriverManager.getDriver(GridDriverManager.java:152)\n\tat stepdefinition.LoginWorkflow.init(LoginWorkflow.java:36)\nCaused by: org.openqa.grid.common.exception.GridException: Error forwarding the new session Empty pool of VM for setup Capabilities {acceptSslCerts: true, browserName: chrome, platform: macOS 10.14, version: 91.0.4472.114}\n\tat org.openqa.grid.web.servlet.handler.RequestHandler.process(RequestHandler.java:118)\n\tat org.openqa.grid.web.servlet.DriverServlet.process(DriverServlet.java:85)\n\tat org.openqa.grid.web.servlet.DriverServlet.doPost(DriverServlet.java:69)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:707)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:790)\n\tat org.seleniumhq.jetty9.servlet.ServletHolder.handle(ServletHolder.java:865)\n\tat org.seleniumhq.jetty9.servlet.ServletHandler.doHandle(ServletHandler.java:535)\n\tat org.seleniumhq.jetty9.server.handler.ScopedHandler.handle(ScopedHandler.java:146)\n\tat org.seleniumhq.jetty9.security.SecurityHandler.handle(SecurityHandler.java:548)\n\tat org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\n\tat org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:257)\n\tat org.seleniumhq.jetty9.server.session.SessionHandler.doHandle(SessionHandler.java:1595)\n\tat org.seleniumhq.jetty9.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:255)\n\tat org.seleniumhq.jetty9.server.handler.ContextHandler.doHandle(ContextHandler.java:1340)\n\tat org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:203)\n\tat org.seleniumhq.jetty9.servlet.ServletHandler.doScope(ServletHandler.java:473)\n\tat org.seleniumhq.jetty9.server.session.SessionHandler.doScope(SessionHandler.java:1564)\n\tat org.seleniumhq.jetty9.server.handler.ScopedHandler.nextScope(ScopedHandler.java:201)\n\tat org.seleniumhq.jetty9.server.handler.ContextHandler.doScope(ContextHandler.java:1242)\n\tat org.seleniumhq.jetty9.server.handler.ScopedHandler.handle(ScopedHandler.java:144)\n\tat org.seleniumhq.jetty9.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\n\tat org.seleniumhq.jetty9.server.Server.handle(Server.java:503)\n\tat org.seleniumhq.jetty9.server.HttpChannel.handle(HttpChannel.java:364)\n\tat org.seleniumhq.jetty9.server.HttpConnection.onFillable(HttpConnection.java:260)\n\tat org.seleniumhq.jetty9.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:305)\n\tat org.seleniumhq.jetty9.io.FillInterest.fillable(FillInterest.java:103)\n\tat org.seleniumhq.jetty9.io.ChannelEndPoint$2.run(ChannelEndPoint.java:118)\n\tat org.seleniumhq.jetty9.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:765)\n\tat org.seleniumhq.jetty9.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)\n\tat java.lang.Thread.run(Thread.java:748)\n",
-              "duration": 17109000000,
-              "status": "failed"
+              "duration": 3034000000,
+              "status": "passed"
             },
             "match": {
               "location": "stepdefinition.LoginWorkflow.init()"
             }
           }
         ],
-        "line": 24,
+        "line": 18,
         "name": "Invalid Login Test",
         "description": "",
         "id": "login-verification;invalid-login-test;;2",
-        "after": [
-          {
-            "result": {
-              "error_message": "java.lang.NullPointerException\n\tat stepdefinition.LoginWorkflow.closure(LoginWorkflow.java:98)\n",
-              "status": "failed"
-            },
-            "match": {
-              "location": "stepdefinition.LoginWorkflow.closure()"
-            }
-          }
-        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 1000000,
-              "status": "skipped"
+              "duration": 30708000000,
+              "status": "passed"
             },
             "line": 9,
             "name": "Navigate To Loginpage",
@@ -56,7 +44,107 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1291000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enter correct username \"bhavs62.tandon@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"bhavs62.tandon@gmail.com\"",
+                  "offset": 28
+                }
+              ],
+              "location": "stepdefinition.LoginWorkflow.user_enter_correct_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2399000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User enter incorrect password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_enter_incorrect_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Message displayed Wrong UserName \u0026 Password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.message_displayed_wrong_user_name_password()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User is not logged-in.",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_is_not_logged_in()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "User on the Login Page",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2021-06-26T14:58:58.118Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1751000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.init()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Invalid Login Test",
+        "description": "",
+        "id": "login-verification;invalid-login-test;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 39418000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Navigate To Loginpage",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.navigate_to_loginpage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1012000000,
+              "status": "passed"
             },
             "line": 10,
             "name": "User enter correct username \"rishi.khanna786@gmail.com\"",
@@ -73,7 +161,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 2202000000,
+              "status": "passed"
             },
             "line": 11,
             "name": "User enter incorrect password",
@@ -84,7 +173,7 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "status": "passed"
             },
             "line": 12,
             "name": "Message displayed Wrong UserName \u0026 Password",
@@ -95,7 +184,8 @@
           },
           {
             "result": {
-              "status": "skipped"
+              "duration": 1000000,
+              "status": "passed"
             },
             "line": 13,
             "name": "User is not logged-in.",
@@ -107,7 +197,7 @@
         ],
         "tags": [
           {
-            "name": "@smoke"
+            "name": "@regression"
           }
         ]
       }
