@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
-  <test thread-count="3" name="SmokeTest - Chrome Browser(failed)" parallel="methods">
+<suite thread-count="4" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
+  <listeners>
+    <listener class-name="listeners.TransformerListener"/>
+    <listener class-name="listeners.TestListeners"/>
+  </listeners>
+  <test thread-count="4" name="SmokeTest - Chrome Browser(failed)" parallel="methods">
     <classes>
       <class name="com.cucumber.amazon.shopping.TestRunner">
         <methods>
+          <include name="captureScreenshot"/>
           <include name="tearDownClass"/>
           <include name="tearDown"/>
           <include name="setUpClass"/>
           <include name="initServer"/>
-          <include name="scenario" invocation-numbers="0 1"/>
+          <include name="scenario" invocation-numbers="3 3 2"/>
         </methods>
       </class> <!-- com.cucumber.amazon.shopping.TestRunner -->
     </classes>

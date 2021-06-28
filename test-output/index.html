@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,40 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">5 methods, 2 failed,  1 skipped,  2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.cucumber.amazon.shopping.TestRunner" hash-for-method="scenario(&quot;Make Laptop Purchase&quot;, &quot;Optional[Purchase Macbook Air]&quot;)">scenario("Make Laptop Purchase", "Optional[Purchase Macbook Air]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.cucumber.amazon.shopping.TestRunner" hash-for-method="scenario(&quot;Password Reset Test&quot;, &quot;Optional[Login Verification]&quot;)">scenario("Password Reset Test", "Optional[Login Verification]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Retried methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.cucumber.amazon.shopping.TestRunner" hash-for-method="scenario(&quot;Make Laptop Purchase&quot;, &quot;Optional[Purchase Macbook Air]&quot;)">scenario("Make Laptop Purchase", "Optional[Purchase Macbook Air]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -124,6 +157,156 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.cucumber.amazon.shopping.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="scenario(&quot;Make Laptop Purchase&quot;, &quot;Optional[Purchase Macbook Air]&quot;)">
+                  </a> <!-- scenario("Make Laptop Purchase", "Optional[Purchase Macbook Air]") -->
+                  <span class="method-name">scenario</span>
+                  <span class="parameters">("Make Laptop Purchase", "Optional[Purchase Macbook Air]")</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span id=&quot;submit.buy-now-announce&quot; class=&quot;a-button-text&quot; aria-hidden=&quot;true&quot;&gt;...&lt;/span&gt; is not clickable at point (1277, 622). Other element would receive the click: &lt;input id=&quot;buy-now-button&quot; name=&quot;submit.buy-now&quot; data-hover=&quot;Select &lt;b&gt;__dims__&lt;/b&gt; from the left&lt;br&gt; to Buy&quot; class=&quot;a-button-input&quot; type=&quot;submit&quot; aria-labelledby=&quot;submit.buy-now-announce&quot;&gt;
+  (Session info: chrome=91.0.4472.114)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Rishis-MacBook-Pro.local&apos;, ip: &apos;2405:201:d001:6bfe:ed95:1021:6d4e:10f9%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:60691}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c34f95949d1b6048ae7812df8e3e7997
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy28.click(Unknown Source)
+	at webpages.ProductPage.selectBuyNow(ProductPage.java:17)
+	at stepdefinition.PurchaseWorkflow.select_buy_now(PurchaseWorkflow.java:54)
+	at ✽.Select Buy Now(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/PurchaseLaptop.feature:7)
+... Removed 8 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="scenario(&quot;Password Reset Test&quot;, &quot;Optional[Login Verification]&quot;)">
+                  </a> <!-- scenario("Password Reset Test", "Optional[Login Verification]") -->
+                  <span class="method-name">scenario</span>
+                  <span class="parameters">("Password Reset Test", "Optional[Login Verification]")</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Timed out after 30 seconds. Unable to locate the element
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:99)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy28.click(Unknown Source)
+	at webpages.LoginPage.clickForgotPassword(LoginPage.java:56)
+	at stepdefinition.LoginWorkflow.user_selects_forgot_password(LoginWorkflow.java:73)
+	at ✽.User selects Forgot password(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/LoginTest.feature:39)
+Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //a[contains(text(),&apos;Forgot Password&apos;)]] because of the following error:
+SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;//a[contains(text(),&apos;Forgot Password&apos;)]]&apos; is not a valid XPath expression.
+  (Session info: chrome=91.0.4472.114)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Rishis-MacBook-Pro.local&apos;, ip: &apos;2405:201:d001:6bfe:ed95:1021:6d4e:10f9%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:60732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b522982449694d37eda48cc58e3fe77e
+*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Forgot Password&apos;)]]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
+	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:72)
+	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy28.click(Unknown Source)
+	at webpages.LoginPage.clickForgotPassword(LoginPage.java:56)
+	at stepdefinition.LoginWorkflow.user_selects_forgot_password(LoginWorkflow.java:73)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:114)
+	at WebdriverBase.CustomAbstractTestNGCucumberRunner.scenario(CustomAbstractTestNGCucumberRunner.java:31)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+... Removed 16 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">com.cucumber.amazon.shopping.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="scenario(&quot;Make Laptop Purchase&quot;, &quot;Optional[Purchase Macbook Air]&quot;)">
+                  </a> <!-- scenario("Make Laptop Purchase", "Optional[Purchase Macbook Air]") -->
+                  <span class="method-name">scenario</span>
+                  <span class="parameters">("Make Laptop Purchase", "Optional[Purchase Macbook Air]")</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span id=&quot;submit.buy-now-announce&quot; class=&quot;a-button-text&quot; aria-hidden=&quot;true&quot;&gt;...&lt;/span&gt; is not clickable at point (1277, 622). Other element would receive the click: &lt;input id=&quot;buy-now-button&quot; name=&quot;submit.buy-now&quot; data-hover=&quot;Select &lt;b&gt;__dims__&lt;/b&gt; from the left&lt;br&gt; to Buy&quot; class=&quot;a-button-input&quot; type=&quot;submit&quot; aria-labelledby=&quot;submit.buy-now-announce&quot;&gt;
+  (Session info: chrome=91.0.4472.114)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Rishis-MacBook-Pro.local&apos;, ip: &apos;2405:201:d001:6bfe:ed95:1021:6d4e:10f9%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;1.8.0_221&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:60691}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: c34f95949d1b6048ae7812df8e3e7997
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy28.click(Unknown Source)
+	at webpages.ProductPage.selectBuyNow(ProductPage.java:17)
+	at stepdefinition.PurchaseWorkflow.select_buy_now(PurchaseWorkflow.java:54)
+	at ✽.Select Buy Now(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/PurchaseLaptop.feature:7)
+... Removed 8 stack frames
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -161,8 +344,12 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite thread-count=&quot;3&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot; parallel=&quot;methods&quot;&gt;
-  &lt;test thread-count=&quot;3&quot; name=&quot;SmokeTest - Chrome Browser&quot; parallel=&quot;methods&quot;&gt;
+&lt;suite thread-count=&quot;4&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot; parallel=&quot;methods&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;listeners.TransformerListener&quot;/&gt;
+    &lt;listener class-name=&quot;listeners.TestListeners&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;4&quot; name=&quot;SmokeTest - Chrome Browser&quot; parallel=&quot;methods&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.cucumber.amazon.shopping.TestRunner&quot;/&gt;
     &lt;/classes&gt;
@@ -212,15 +399,27 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(5);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'scenario')
 data.setCell(0, 2, 'com.cucumber.amazon.shopping.TestRunner')
-data.setCell(0, 3, 44570);
+data.setCell(0, 3, 43625);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'scenario')
 data.setCell(1, 2, 'com.cucumber.amazon.shopping.TestRunner')
-data.setCell(1, 3, 37547);
+data.setCell(1, 3, 23310);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'scenario')
+data.setCell(2, 2, 'com.cucumber.amazon.shopping.TestRunner')
+data.setCell(2, 3, 18055);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'scenario')
+data.setCell(3, 2, 'com.cucumber.amazon.shopping.TestRunner')
+data.setCell(3, 3, 15567);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'scenario')
+data.setCell(4, 2, 'com.cucumber.amazon.shopping.TestRunner')
+data.setCell(4, 3, 7319);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -258,23 +457,59 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">6121 ms</span>
+                <span class="method-start">9263 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">scenario("Invalid Login Test", "Optional[Login Verification]")</span>
-                <span class="method-start">6451 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">scenario("Password Reset Test", "Optional[Login Verification]")</span>
+                <span class="method-start">9710 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">scenario("Invalid Login Test", "Optional[Login Verification]")</span>
-                <span class="method-start">6451 ms</span>
+                <span class="method-start">9710 ms</span>
               </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">scenario("Invalid Login Test", "Optional[Login Verification]")</span>
+                <span class="method-start">9710 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">scenario("Make Laptop Purchase", "Optional[Purchase Macbook Air]")</span>
+                <span class="method-start">9710 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=scenario status=SKIP method=CustomAbstractTestNGCucumberRunner.scenario(io.cucumber...)</span>
+                <span class="method-start">25281 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">scenario("Make Laptop Purchase", "Optional[Purchase Macbook Air]")</span>
+                <span class="method-start">25995 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=scenario status=SUCCESS method=CustomAbstractTestNGCucumberRunner.scenario(io.cucum...)</span>
+                <span class="method-start">27767 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=scenario status=SUCCESS method=CustomAbstractTestNGCucumberRunner.scenario(io.cucum...)</span>
+                <span class="method-start">33021 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=scenario status=FAILURE method=CustomAbstractTestNGCucumberRunner.scenario(io.cucum...)</span>
+                <span class="method-start">33315 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=scenario status=FAILURE method=CustomAbstractTestNGCucumberRunner.scenario(io.cucum...)</span>
+                <span class="method-start">53337 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">51023 ms</span>
+                <span class="method-start">53733 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">56114 ms</span>
+                <span class="method-start">58848 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

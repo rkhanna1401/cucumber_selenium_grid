@@ -3,21 +3,20 @@ package Utils;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import Exceptions.UtilException;
-import WebdriverBase.GridDriverManager;
 
-public class GenericUtils extends GridDriverManager{
+public class GenericUtils {
 
 	private static String parent;
 
-	public GenericUtils() throws Exception {
-	}
-
+	
 	public static boolean isDisplayed(WebElement element) {
 		boolean displayed = false;
 		try {
@@ -82,6 +81,20 @@ public class GenericUtils extends GridDriverManager{
 		}
 
 		return chromeDriver.getAbsolutePath();
+	}
+
+	public static String createOutputFolderPath() {
+		Date date = new Date();
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
+		String formattedDate  = simpleDateFormat.format(date);
+		String path = "output/screenshots/" + formattedDate+"/";
+		File targetFolder = new File(path);
+		if(!targetFolder.exists()) {
+			targetFolder.mkdir();
+		}
+	
+		
+		return path;
 	}
 }
 

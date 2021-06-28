@@ -1,5 +1,7 @@
 package WebdriverBase;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.grid.common.GridRole;
 import org.openqa.grid.common.RegistrationRequest;
 import org.openqa.grid.internal.utils.SelfRegisteringRemote;
@@ -13,7 +15,6 @@ import org.openqa.selenium.remote.server.SeleniumServer;
 public class HubNodeConfiguration {
 
 	static Hub hub;
-	private static SelfRegisteringRemote remote;
 
 	public static void configureServer() {
 
@@ -27,7 +28,7 @@ public class HubNodeConfiguration {
 
 		GridNodeConfiguration gridNodeConfig = new GridNodeConfiguration();
 		gridNodeConfig.hub = "http://127.0.0.1:4444";
-		gridNodeConfig.host = "127.0.0.1"; //my ip address
+		gridNodeConfig.host = "127.0.0.1";
 		gridNodeConfig.port = 5555;
 		gridNodeConfig.role = GridRole.NODE.toString();
 		gridNodeConfig.proxy = DefaultRemoteProxy.class.getCanonicalName();
@@ -43,7 +44,11 @@ public class HubNodeConfiguration {
 
 		hub = getHub("localhost", gridHubConfig.port);
 
-
+		try {
+			TimeUnit.SECONDS.sleep(3);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		System.out.println("Node Registered to Hub..............");
 	}
 
@@ -52,5 +57,9 @@ public class HubNodeConfiguration {
 		config.host = host;
 		config.port = port;
 		return new Hub(config);
+	}
+	
+	public static void tearDownHub() {
+		hub.stop();
 	}
 }

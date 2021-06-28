@@ -11,11 +11,20 @@
         "steps": []
       },
       {
-        "start_timestamp": "2021-06-26T14:58:58.119Z",
+        "start_timestamp": "2021-06-28T11:11:17.497Z",
         "before": [
           {
             "result": {
-              "duration": 3034000000,
+              "duration": 3645000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.init()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1000000,
               "status": "passed"
             },
             "match": {
@@ -32,7 +41,7 @@
         "steps": [
           {
             "result": {
-              "duration": 30708000000,
+              "duration": 10303000000,
               "status": "passed"
             },
             "line": 9,
@@ -44,7 +53,7 @@
           },
           {
             "result": {
-              "duration": 1291000000,
+              "duration": 5309000000,
               "status": "passed"
             },
             "line": 10,
@@ -62,7 +71,116 @@
           },
           {
             "result": {
-              "duration": 2399000000,
+              "duration": 3911000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User enter incorrect password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_enter_incorrect_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Message displayed Wrong UserName \u0026 Password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.message_displayed_wrong_user_name_password()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User is not logged-in.",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_is_not_logged_in()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "User on the Login Page",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2021-06-28T11:11:17.499Z",
+        "before": [
+          {
+            "result": {
+              "duration": 7462000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.init()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.init()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Invalid Login Test",
+        "description": "",
+        "id": "login-verification;invalid-login-test;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 8137000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Navigate To Loginpage",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.navigate_to_loginpage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2119000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enter correct username \"rishi.khanna786@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"rishi.khanna786@gmail.com\"",
+                  "offset": 28
+                }
+              ],
+              "location": "stepdefinition.LoginWorkflow.user_enter_correct_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 194000000,
               "status": "passed"
             },
             "line": 11,
@@ -110,11 +228,19 @@
         "steps": []
       },
       {
-        "start_timestamp": "2021-06-26T14:58:58.118Z",
+        "start_timestamp": "2021-06-28T11:11:17.493Z",
         "before": [
           {
             "result": {
-              "duration": 1751000000,
+              "duration": 5402000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.init()"
+            }
+          },
+          {
+            "result": {
               "status": "passed"
             },
             "match": {
@@ -122,77 +248,59 @@
             }
           }
         ],
-        "line": 19,
-        "name": "Invalid Login Test",
+        "line": 37,
+        "name": "Password Reset Test",
         "description": "",
-        "id": "login-verification;invalid-login-test;;3",
+        "id": "login-verification;password-reset-test",
         "type": "scenario",
-        "keyword": "Scenario Outline",
+        "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 39418000000,
+              "duration": 7834000000,
               "status": "passed"
             },
-            "line": 9,
-            "name": "Navigate To Loginpage",
+            "line": 38,
+            "name": "Navigate to password page",
             "match": {
-              "location": "stepdefinition.LoginWorkflow.navigate_to_loginpage()"
+              "location": "stepdefinition.LoginWorkflow.navigate_to_password_page()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 1012000000,
-              "status": "passed"
+              "error_message": "org.openqa.selenium.NoSuchElementException: Timed out after 30 seconds. Unable to locate the element\n\tat org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:99)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy28.click(Unknown Source)\n\tat webpages.LoginPage.clickForgotPassword(LoginPage.java:56)\n\tat stepdefinition.LoginWorkflow.user_selects_forgot_password(LoginWorkflow.java:73)\n\tat ✽.User selects Forgot password(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/LoginTest.feature:39)\nCaused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //a[contains(text(),\u0027Forgot Password\u0027)]] because of the following error:\nSyntaxError: Failed to execute \u0027evaluate\u0027 on \u0027Document\u0027: The string \u0027//a[contains(text(),\u0027Forgot Password\u0027)]]\u0027 is not a valid XPath expression.\n  (Session info: chrome\u003d91.0.4472.114)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Rishis-MacBook-Pro.local\u0027, ip: \u00272405:201:d001:6bfe:ed95:1021:6d4e:10f9%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.14.6\u0027, java.version: \u00271.8.0_221\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:60732}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: b522982449694d37eda48cc58e3fe77e\n*** Element info: {Using\u003dxpath, value\u003d//a[contains(text(),\u0027Forgot Password\u0027)]]}\n\tat sun.reflect.GeneratedConstructorAccessor21.newInstance(Unknown Source)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\n\tat org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)\n\tat org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)\n\tat org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)\n\tat org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:72)\n\tat org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)\n\tat com.sun.proxy.$Proxy28.click(Unknown Source)\n\tat webpages.LoginPage.clickForgotPassword(LoginPage.java:56)\n\tat stepdefinition.LoginWorkflow.user_selects_forgot_password(LoginWorkflow.java:73)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat io.cucumber.java.Invoker.doInvoke(Invoker.java:66)\n\tat io.cucumber.java.Invoker.invoke(Invoker.java:24)\n\tat io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)\n\tat io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)\n\tat io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)\n\tat io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)\n\tat io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)\n\tat io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)\n\tat io.cucumber.core.runner.TestStep.run(TestStep.java:64)\n\tat io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)\n\tat io.cucumber.core.runner.TestCase.run(TestCase.java:104)\n\tat io.cucumber.core.runner.Runner.runPickle(Runner.java:73)\n\tat io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)\n\tat io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)\n\tat io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:114)\n\tat WebdriverBase.CustomAbstractTestNGCucumberRunner.scenario(CustomAbstractTestNGCucumberRunner.java:31)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)\n\tat org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)\n\tat org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)\n\tat org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)\n\tat org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)\n\tat java.util.concurrent.FutureTask.run(FutureTask.java:266)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat java.lang.Thread.run(Thread.java:748)\n",
+              "duration": 30243000000,
+              "status": "failed"
             },
-            "line": 10,
-            "name": "User enter correct username \"rishi.khanna786@gmail.com\"",
+            "line": 39,
+            "name": "User selects Forgot password",
             "match": {
-              "arguments": [
-                {
-                  "val": "\"rishi.khanna786@gmail.com\"",
-                  "offset": 28
-                }
-              ],
-              "location": "stepdefinition.LoginWorkflow.user_enter_correct_username(java.lang.String)"
+              "location": "stepdefinition.LoginWorkflow.user_selects_forgot_password()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 2202000000,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 11,
-            "name": "User enter incorrect password",
+            "line": 40,
+            "name": "User navigated to password reset page",
             "match": {
-              "location": "stepdefinition.LoginWorkflow.user_enter_incorrect_password()"
+              "location": "stepdefinition.LoginWorkflow.user_navigated_to_password_reset_page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 12,
-            "name": "Message displayed Wrong UserName \u0026 Password",
+            "line": 41,
+            "name": "User succesfully resets the password",
             "match": {
-              "location": "stepdefinition.LoginWorkflow.message_displayed_wrong_user_name_password()"
+              "location": "stepdefinition.LoginWorkflow.user_succesfully_resets_the_password()"
             },
             "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 1000000,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "User is not logged-in.",
-            "match": {
-              "location": "stepdefinition.LoginWorkflow.user_is_not_logged_in()"
-            },
-            "keyword": "And "
           }
         ],
         "tags": [
@@ -207,6 +315,185 @@
     "id": "login-verification",
     "keyword": "Feature",
     "uri": "file:src/main/java/feature/LoginTest.feature",
+    "tags": []
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2021-06-28T11:11:17.493Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1992000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.init()"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.init()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Make Laptop Purchase",
+        "description": "",
+        "id": "purchase-macbook-air;make-laptop-purchase",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3151000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "You are on homepage of Amazon",
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.you_are_on_homepage_of_amazon()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4047000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "You search for Macbook Air",
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.you_search_for_macbook_air()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element \u003cspan id\u003d\"submit.buy-now-announce\" class\u003d\"a-button-text\" aria-hidden\u003d\"true\"\u003e...\u003c/span\u003e is not clickable at point (1277, 622). Other element would receive the click: \u003cinput id\u003d\"buy-now-button\" name\u003d\"submit.buy-now\" data-hover\u003d\"Select \u003cb\u003e__dims__\u003c/b\u003e from the left\u003cbr\u003e to Buy\" class\u003d\"a-button-input\" type\u003d\"submit\" aria-labelledby\u003d\"submit.buy-now-announce\"\u003e\n  (Session info: chrome\u003d91.0.4472.114)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Rishis-MacBook-Pro.local\u0027, ip: \u00272405:201:d001:6bfe:ed95:1021:6d4e:10f9%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.14.6\u0027, java.version: \u00271.8.0_221\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:60691}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: c34f95949d1b6048ae7812df8e3e7997\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy28.click(Unknown Source)\n\tat webpages.ProductPage.selectBuyNow(ProductPage.java:17)\n\tat stepdefinition.PurchaseWorkflow.select_buy_now(PurchaseWorkflow.java:54)\n\tat ✽.Select Buy Now(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/PurchaseLaptop.feature:7)\n",
+              "duration": 6217000000,
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "Select Buy Now",
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.select_buy_now()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "You make a successful purchase",
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.you_make_a_successful_purchase()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-06-28T11:11:33.649Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.init()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.init()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Make Laptop Purchase",
+        "description": "",
+        "id": "purchase-macbook-air;make-laptop-purchase",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1572000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "You are on homepage of Amazon",
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.you_are_on_homepage_of_amazon()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1912000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "You search for Macbook Air",
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.you_search_for_macbook_air()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element \u003cspan id\u003d\"submit.buy-now-announce\" class\u003d\"a-button-text\" aria-hidden\u003d\"true\"\u003e...\u003c/span\u003e is not clickable at point (1277, 622). Other element would receive the click: \u003cinput id\u003d\"buy-now-button\" name\u003d\"submit.buy-now\" data-hover\u003d\"Select \u003cb\u003e__dims__\u003c/b\u003e from the left\u003cbr\u003e to Buy\" class\u003d\"a-button-input\" type\u003d\"submit\" aria-labelledby\u003d\"submit.buy-now-announce\"\u003e\n  (Session info: chrome\u003d91.0.4472.114)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Rishis-MacBook-Pro.local\u0027, ip: \u00272405:201:d001:6bfe:ed95:1021:6d4e:10f9%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.14.6\u0027, java.version: \u00271.8.0_221\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:60691}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: c34f95949d1b6048ae7812df8e3e7997\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy28.click(Unknown Source)\n\tat webpages.ProductPage.selectBuyNow(ProductPage.java:17)\n\tat stepdefinition.PurchaseWorkflow.select_buy_now(PurchaseWorkflow.java:54)\n\tat ✽.Select Buy Now(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/PurchaseLaptop.feature:7)\n",
+              "duration": 3825000000,
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "Select Buy Now",
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.select_buy_now()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "You make a successful purchase",
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.you_make_a_successful_purchase()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
+        ]
+      }
+    ],
+    "name": "Purchase Macbook Air",
+    "description": "",
+    "id": "purchase-macbook-air",
+    "keyword": "Feature",
+    "uri": "file:src/main/java/feature/PurchaseLaptop.feature",
     "tags": []
   }
 ]

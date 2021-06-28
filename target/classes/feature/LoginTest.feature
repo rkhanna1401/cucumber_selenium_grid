@@ -15,13 +15,13 @@ And User is not logged-in.
 @regression
 Examples:
 | email |
-| bhavs62.tandon@gmail.com |
-| rishi.khanna786@gmail.com |
+| bhavs.tandon@gmail.com |
+| rishi.khanna@gmail.com |
  
 @smoke
 Examples:
 | email |
-| rishi.khanna786@gmail.com | 
+| rishi.khanna@gmail.com | 
 
 
 @loginusers
@@ -33,7 +33,7 @@ Examples:
       | rishi.khanna786@gmail.com | test123 |
 
 
-@negative
+@regression
 Scenario: Password Reset Test
 Given Navigate to password page
 When User selects Forgot password

@@ -3,7 +3,6 @@ package WebdriverBase;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.FeatureWrapper;
@@ -18,7 +17,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 		plugin = {"pretty","json:target/report.xml","json:target/cucumber.json","html:target/cucumber"})
 public class CustomAbstractTestNGCucumberRunner extends GridDriverManager{
 
-	
+
 
 	private TestNGCucumberRunner testNGCucumberRunner;
 

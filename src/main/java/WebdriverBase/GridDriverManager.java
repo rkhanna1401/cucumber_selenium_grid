@@ -4,29 +4,31 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
 import com.google.gson.JsonObject;
 
+import Utils.GenericUtils;
 import Utils.JsonUtils;
 import Utils.PropertyManager;
-import enums.PlatformList;
 
 public class GridDriverManager {
 
@@ -42,10 +44,21 @@ public class GridDriverManager {
 	private	static ArrayList<RemoteWebDriver> remoteWebDriverList = new ArrayList<RemoteWebDriver>();
 	private static String platform;
 	private static String browser;
+	private static Logger logger;
+	private static GridDriverManager gridDriverManager;
+private static 	String path;
+
+	public static GridDriverManager getInstance()
+	{
+		if (gridDriverManager==null)
+			gridDriverManager = new GridDriverManager();
+		return gridDriverManager;
+	}
 
 	@BeforeSuite
 	public void initServer() {
 		HubNodeConfiguration.configureServer();
+		logger = Logger.getLogger(GridDriverManager.class.getName());
 		if(jsonObject==null) {
 			try {
 				jsonObject = JsonUtils.SetupJsonConfig(JsonUtils.getConfigsJsonFilePath("url"));
@@ -53,18 +66,19 @@ public class GridDriverManager {
 				e.printStackTrace();
 			}
 		}
+		capabilities = new DesiredCapabilities();
 		hubIpAddress = JsonUtils.getValFromJson(jsonObject, "huburl","");
 		platform = PropertyManager.getPropertyHelper("configuration").get("platform").toString();
 		browser = PropertyManager.getPropertyHelper("configuration").get("browser").toString();
 		setPlatform(platform);
 		setDriverLocation(browser);
+		 path =  GenericUtils.createOutputFolderPath();
 	}
 
 
 
 	public WebDriver getLocalDriver(String browserType,String platformType)  {
 
-		DesiredCapabilities capabilities = new DesiredCapabilities();
 		if (browserType.equalsIgnoreCase("Firefox")) {
 			firefoxOptions = new FirefoxOptions();
 			firefoxOptions.merge(capabilities);
@@ -76,62 +90,58 @@ public class GridDriverManager {
 			options.setAcceptInsecureCerts(true);
 			options.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.ACCEPT);
 			options.merge(capabilities);
-			driver = new ChromeDriver(options);
+			//driver = new ChromeDriver(options);
+			threadLocalDriver.set(new ChromeDriver(options));
 		}
 		if (browserType.equalsIgnoreCase("Safari")) {
 			SafariOptions options = new SafariOptions();
 			options.merge(capabilities);
 		}
-		driver.manage().window().maximize();
 		return driver;
 	}
 
 	public RemoteWebDriver getDriver() {
-	
-		return setDriver(browser,platform);
+		if(threadLocalDriver.get() == null) {
+			setDriver(browser, platform);
+		}
+		return threadLocalDriver.get();
 	}
 
 	/**
 	 * 
 	 * @param browserType
 	 * @param platformType
-	 * @return Remote Driver Instance if running on Grid mode or upcasted webdriver instance if running locally
+	 * @return Remote Driver Instance if running on Grid mode or up-casted webdriver instance if running locally
 	 */
-	public RemoteWebDriver setDriver(String browserType,String platformType)  {
+	public void setDriver(String browserType,String platformType)  {
 		synchronized (browserType) {
-			DesiredCapabilities caps = null;
 			if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON"))
 			{
 				try {
 					Thread.sleep(1000);
 					if(browserType.equalsIgnoreCase("chrome")) {
-						setDriverLocation(browserType);
-						 caps = DesiredCapabilities.chrome();
-						
+						capabilities = DesiredCapabilities.chrome();
 					}
 					else if(browserType.equalsIgnoreCase("safari")) {
-					caps = DesiredCapabilities.safari();
-						threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),caps));
+						capabilities = DesiredCapabilities.safari();
 					}
 					else if(browserType.equalsIgnoreCase("firefox")) {
-						 caps = DesiredCapabilities.firefox();
-						threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),caps));
+						capabilities = DesiredCapabilities.firefox();
 					}
-					driver = new RemoteWebDriver(new URL(hubIpAddress), caps);
-					driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-					driver.manage().window().maximize();
+					threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),capabilities));
+					threadLocalDriver.get().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+					threadLocalDriver.get().manage().window().maximize();
+					//driver = new RemoteWebDriver(new URL(hubIpAddress), capabilities);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				remoteWebDriverList.add((RemoteWebDriver) driver);
-				return (RemoteWebDriver) driver;
+				remoteWebDriverList.add(threadLocalDriver.get());
 			}
 			else {
 				getLocalDriver(browserType, platformType);
-				driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-				driver.manage().window().maximize();
-				webDriverList.add(driver);
-				return (RemoteWebDriver) driver;
+				threadLocalDriver.get().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+				threadLocalDriver.get().manage().window().maximize();
+				webDriverList.add(threadLocalDriver.get());
 			}
 		}
 	}
@@ -148,10 +158,10 @@ public class GridDriverManager {
 			capabilities.setPlatform(Platform.MAC);
 			break;
 		default:
-			//  LOGGER.info("Failed to set the Platform as: " + platform);
+			logger.info("Failed to set the Platform as: " + platform);
 			break;
 		}
-		// LOGGER.info("Successfully set the Platform as: " + platform);
+		logger.info("Successfully set the Platform as: " + platform);
 	}
 
 	/**
@@ -176,11 +186,11 @@ public class GridDriverManager {
 			break;
 
 		default:
-			//  LOGGER.info("Failed to  Set the driver locations");
+			logger.info("Failed to  Set the driver locations");
 			System.exit(1);
 			break;
 		}
-		// LOGGER.info("Successfully Set the driver locations");
+		logger.info("Successfully Set the driver locations");
 	}
 
 
@@ -188,15 +198,37 @@ public class GridDriverManager {
 		return json.get(dataKey).getAsString();
 	}
 
+
+	@AfterMethod
+	public void captureScreenshot(ITestResult iTestResult) {
+		String currentTestName = iTestResult.getMethod().getMethodName();
+		if(iTestResult.isSuccess()) {}
+		else {
+			logger.log(Level.INFO,currentTestName + "test is failed");
+			TakesScreenshot scrShot =((TakesScreenshot)threadLocalDriver.get());
+			File srcFile=scrShot.getScreenshotAs(OutputType.FILE);
+			File destFile=new File(path+currentTestName+".png");
+			try {
+				FileUtils.copyFile(srcFile, destFile);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
 	@AfterSuite
 	public void tearDown() {
 		if(!remoteWebDriverList.isEmpty()) {
 			for(RemoteWebDriver driver : remoteWebDriverList)
 				driver.quit();
+			HubNodeConfiguration.tearDownHub();
+			logger.info("Hub and Node has been shut down");
 		}
 		if(!webDriverList.isEmpty()) {
 			for(WebDriver driver : webDriverList)
 				driver.quit();
 		}
+		logger.info("All browser instances has been shut down");
+
 	}
 }
