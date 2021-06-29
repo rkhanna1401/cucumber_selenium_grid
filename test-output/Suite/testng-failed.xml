@@ -14,7 +14,7 @@
           <include name="tearDown"/>
           <include name="setUpClass"/>
           <include name="initServer"/>
-          <include name="scenario" invocation-numbers="3 3 2"/>
+          <include name="scenario"/>
         </methods>
       </class> <!-- com.cucumber.amazon.shopping.TestRunner -->
     </classes>

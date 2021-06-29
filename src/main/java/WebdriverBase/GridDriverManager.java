@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,11 +25,15 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+
+import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import com.google.gson.JsonObject;
 
 import Utils.GenericUtils;
 import Utils.JsonUtils;
 import Utils.PropertyManager;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 
 public class GridDriverManager {
 
@@ -46,7 +51,9 @@ public class GridDriverManager {
 	private static String browser;
 	private static Logger logger;
 	private static GridDriverManager gridDriverManager;
-private static 	String path;
+	private static 	String path;
+	private static File srcFile;
+	private static String Base64StringOfScreenshot="";
 
 	public static GridDriverManager getInstance()
 	{
@@ -57,7 +64,9 @@ private static 	String path;
 
 	@BeforeSuite
 	public void initServer() {
+		if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON")) {
 		HubNodeConfiguration.configureServer();
+	}
 		logger = Logger.getLogger(GridDriverManager.class.getName());
 		if(jsonObject==null) {
 			try {
@@ -72,7 +81,7 @@ private static 	String path;
 		browser = PropertyManager.getPropertyHelper("configuration").get("browser").toString();
 		setPlatform(platform);
 		setDriverLocation(browser);
-		 path =  GenericUtils.createOutputFolderPath();
+		path =  GenericUtils.createOutputFolderPath();
 	}
 
 
@@ -200,19 +209,22 @@ private static 	String path;
 
 
 	@AfterMethod
-	public void captureScreenshot(ITestResult iTestResult) {
+	public void captureScreenshot(ITestResult iTestResult) throws IOException {
 		String currentTestName = iTestResult.getMethod().getMethodName();
 		if(iTestResult.isSuccess()) {}
 		else {
 			logger.log(Level.INFO,currentTestName + "test is failed");
 			TakesScreenshot scrShot =((TakesScreenshot)threadLocalDriver.get());
-			File srcFile=scrShot.getScreenshotAs(OutputType.FILE);
+			srcFile=scrShot.getScreenshotAs(OutputType.FILE);
 			File destFile=new File(path+currentTestName+".png");
 			try {
 				FileUtils.copyFile(srcFile, destFile);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			byte[] fileContent = FileUtils.readFileToByteArray(srcFile);
+			Base64StringOfScreenshot = "data:image/png;base64," + Base64.getEncoder().encodeToString(fileContent);
+
 		}
 	}
 
@@ -230,5 +242,11 @@ private static 	String path;
 		}
 		logger.info("All browser instances has been shut down");
 
+	}
+
+	@After
+	public void af0(Scenario scenario) throws InterruptedException, IOException, IllegalMonitorStateException
+	{	
+		ExtentCucumberAdapter.addTestStepScreenCaptureFromPath(Base64StringOfScreenshot);
 	}
 }

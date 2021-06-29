@@ -1,6 +1,6 @@
 Feature: Purchase Macbook Air
 
-@regression
+@smoke
 Scenario: Make Laptop Purchase
 Given You are on homepage of Amazon
 When You search for Macbook Air

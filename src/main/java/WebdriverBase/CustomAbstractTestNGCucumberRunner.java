@@ -13,8 +13,13 @@ import io.cucumber.testng.TestNGCucumberRunner;
 @CucumberOptions(
 		features = "src/main/java/feature", 
 		glue = {"stepdefinition"},
-		tags = "@regression",
-		plugin = {"pretty","json:target/report.xml","json:target/cucumber.json","html:target/cucumber"})
+		tags = "@sanity",
+				monochrome = true,
+		plugin = {
+				//"pretty","json:target/report.xml","json:target/cucumber.json","html:target/cucumber",
+				"io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"
+		})
+				//"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class CustomAbstractTestNGCucumberRunner extends GridDriverManager{
 
 
