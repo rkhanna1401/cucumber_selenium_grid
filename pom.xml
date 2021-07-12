@@ -15,6 +15,7 @@
 		</properties> -->
 	<properties>
 		<aspectj.version>1.8.10</aspectj.version>
+		<allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
 	</properties>
 
 	<dependencies>
@@ -64,12 +65,8 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
-		<dependency>
-			<groupId>net.masterthought</groupId>
-			<artifactId>cucumber-reporting</artifactId>
-			<version>5.5.0</version>
-		</dependency>
-
+		<!-- <dependency> <groupId>net.masterthought</groupId> <artifactId>cucumber-reporting</artifactId> 
+			<version>5.5.0</version> </dependency> -->
 		<!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -116,10 +113,13 @@
 			<version>6.10.2</version>
 		</dependency>
 
+		<!-- <dependency> <groupId>tech.grasshopper</groupId> <artifactId>extentreports-cucumber6-adapter</artifactId> 
+			<version>1.0.0</version> </dependency> -->
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
-			<groupId>tech.grasshopper</groupId>
-			<artifactId>extentreports-cucumber6-adapter</artifactId>
-			<version>1.0.0</version>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.10.0</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-cucumber6-jvm -->
@@ -129,7 +129,19 @@
 			<version>2.14.0</version>
 		</dependency>
 
+		 <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
+		<!--<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>5.2.0</version>
+		</dependency> -->
 
+		<!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>maven-cucumber-reporting</artifactId>
+			<version>3.15.0</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
@@ -152,6 +164,7 @@
 			</plugin>
 
 			<plugin>
+
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
@@ -166,7 +179,13 @@
 					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
-					
+
+					<systemProperties>
+						<property>
+							<name>allure.results.directory</name>
+							<value>${allure.results.directory}</value>
+						</property>
+					</systemProperties>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -185,6 +204,55 @@
 					<allureDownloadUrl>https://github.com/allure-framework/allure2/releases/download/2.14.0/allure-2.14.0.zip</allureDownloadUrl>
 				</configuration>
 			</plugin>
+			<!-- TestNG reporting plugin -->
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.15.0</version>
+
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>test</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						 <configuration>
+						 <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+						  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
+						  <project.build.resourceEncoding>UTF-8</project.build.resourceEncoding> 
+						  <maven.compile.encoding>UTF-8</maven.compile.encoding>
+                            <projectName>shopping</projectName>
+                            <!-- optional, per documentation set this to "true" to bypass generation of Cucumber Reports entirely, defaults to false if not specified -->
+                            <skip>false</skip>
+                            <!-- output directory for the generated report -->
+                            <outputDirectory>${project.build.directory}/cucumber</outputDirectory>
+                            <!-- optional, defaults to outputDirectory if not specified -->
+                            <inputDirectory>${project.build.directory}/cucumber</inputDirectory>
+                           <!--  <jsonFiles>
+                                supports wildcard or name pattern
+                                <param>**/*.json</param>
+                            </jsonFiles> -->
+                            <!-- optional, defaults to outputDirectory if not specified -->
+                            <classificationDirectory>${project.build.directory}/classifications</classificationDirectory>
+                            <classificationFiles>
+                                    <!-- supports wildcard or name pattern -->
+                                    <param>sample.properties</param>
+                                    <param>other.properties</param>
+                            </classificationFiles>
+                            <parallelTesting>false</parallelTesting>
+                            <!-- optional, set true to group features by its Ids -->
+                            <mergeFeaturesById>false</mergeFeaturesById>
+                            <!-- optional, set true to get a final report with latest results of the same test from different test runs -->
+                            <mergeFeaturesWithRetest>false</mergeFeaturesWithRetest>
+                            <!-- optional, set true to fail build on test failures -->
+                            <checkBuildResult>false</checkBuildResult>
+                        </configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
 		</plugins>
 	</build>
 </project>

@@ -1,5 +1,7 @@
 package WebdriverBase;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.grid.common.GridRole;
@@ -30,10 +32,21 @@ public class HubNodeConfiguration {
 		gridNodeConfig.hub = "http://127.0.0.1:4444";
 		gridNodeConfig.host = "127.0.0.1";
 		gridNodeConfig.port = 5555;
+		gridNodeConfig.nodeConfigFile = "/Users/rishikhanna/Documents/cucumber/shopping/configs/node.json";
 		gridNodeConfig.role = GridRole.NODE.toString();
+		GridNodeConfiguration.loadFromJSON("/Users/rishikhanna/Documents/cucumber/shopping/configs/node.json");
 		gridNodeConfig.proxy = DefaultRemoteProxy.class.getCanonicalName();
+		
+		 Map<String, Object> nodeConfiguration = new HashMap<String,
+	                Object>();
+
+	                nodeConfiguration.put(RegistrationRequest.PATH, "/Users/rishikhanna/Documents/cucumber/shopping/configs/node.json");
+	                RegistrationRequest.fromJson(nodeConfiguration);
+	              //  RegistrationRequest.MAX_INSTANCES 
 		RegistrationRequest req = RegistrationRequest.build(gridNodeConfig);
 		req.getConfiguration();
+		 
+
 		req.validate();
 		RegistrationRequest.build(gridNodeConfig);
 

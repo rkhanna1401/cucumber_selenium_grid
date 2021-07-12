@@ -1,0 +1,230 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 5,
+        "name": "",
+        "description": "User on the Login Page",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2021-07-09T13:34:30.208Z",
+        "before": [
+          {
+            "result": {
+              "duration": 3202000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.init()"
+            }
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.init()"
+            }
+          }
+        ],
+        "line": 18,
+        "name": "Invalid Login Test",
+        "description": "",
+        "id": "login-verification;invalid-login-test;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 4547000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Navigate To Loginpage",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.navigate_to_loginpage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1592000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enter correct username \"bhavs62.tandon@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"bhavs62.tandon@gmail.com\"",
+                  "offset": 28
+                }
+              ],
+              "location": "stepdefinition.LoginWorkflow.user_enter_correct_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3604000000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User enter incorrect password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_enter_incorrect_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "Message displayed Wrong UserName \u0026 Password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.message_displayed_wrong_user_name_password()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User is not logged-in.",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_is_not_logged_in()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
+        ]
+      },
+      {
+        "line": 5,
+        "name": "",
+        "description": "User on the Login Page",
+        "type": "background",
+        "keyword": "Background",
+        "steps": []
+      },
+      {
+        "start_timestamp": "2021-07-09T13:34:30.209Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4907000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.PurchaseWorkflow.init()"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.init()"
+            }
+          }
+        ],
+        "line": 19,
+        "name": "Invalid Login Test",
+        "description": "",
+        "id": "login-verification;invalid-login-test;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 6784000000,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Navigate To Loginpage",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.navigate_to_loginpage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 842000000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "User enter correct username \"rishi.khanna7868@gmail.com\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"rishi.khanna7868@gmail.com\"",
+                  "offset": 28
+                }
+              ],
+              "location": "stepdefinition.LoginWorkflow.user_enter_correct_username(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d91.0.4472.114)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Rishis-MacBook-Pro.local\u0027, ip: \u00272405:201:d001:6bfe:8918:6e7d:26ec:d048%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.14.6\u0027, java.version: \u00271.8.0_221\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 3ca06f2a6f9aac4e31d93f6084e4a47f\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\n\tat org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\n\tat sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)\n\tat com.sun.proxy.$Proxy23.sendKeys(Unknown Source)\n\tat webpages.LoginPage.setPassword(LoginPage.java:44)\n\tat stepdefinition.LoginWorkflow.user_enter_incorrect_password(LoginWorkflow.java:49)\n\tat ✽.User enter incorrect password(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/LoginTest.feature:11)\n",
+              "duration": 10188000000,
+              "status": "failed"
+            },
+            "line": 11,
+            "name": "User enter incorrect password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_enter_incorrect_password()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "Message displayed Wrong UserName \u0026 Password",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.message_displayed_wrong_user_name_password()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "User is not logged-in.",
+            "match": {
+              "location": "stepdefinition.LoginWorkflow.user_is_not_logged_in()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          }
+        ]
+      }
+    ],
+    "name": "Login Verification",
+    "description": "Description: This will test all login related scenario\u0027s",
+    "id": "login-verification",
+    "keyword": "Feature",
+    "uri": "file:src/main/java/feature/LoginTest.feature",
+    "tags": []
+  }
+]

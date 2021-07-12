@@ -2,7 +2,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="4" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
   <listeners>
-    <listener class-name="listeners.TransformerListener"/>
     <listener class-name="listeners.TestListeners"/>
   </listeners>
   <test thread-count="4" name="SmokeTest - Chrome Browser(failed)" parallel="methods">
@@ -14,7 +13,7 @@
           <include name="tearDown"/>
           <include name="setUpClass"/>
           <include name="initServer"/>
-          <include name="scenario"/>
+          <include name="scenario" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.cucumber.amazon.shopping.TestRunner -->
     </classes>

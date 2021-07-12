@@ -16,12 +16,12 @@ And User is not logged-in.
 Examples:
 | email |
 | bhavs62.tandon@gmail.com |
-| rishi.khanna786@gmail.com |
+| rishi.khanna7868@gmail.com |
  
 @smoke
 Examples:
 | email |
-| rishi.khanna@gmail.com | 
+| rishi.khanna786@gmail.com | 
 
 
 @loginusers

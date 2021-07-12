@@ -1,21 +1,13 @@
 package listeners;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import Utils.GenericUtils;
-import WebdriverBase.GridDriverManager;
 
 public class TestListeners implements ITestListener, ISuiteListener{
 

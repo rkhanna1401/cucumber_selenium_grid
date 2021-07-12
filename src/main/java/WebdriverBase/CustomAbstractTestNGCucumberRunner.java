@@ -9,17 +9,16 @@ import io.cucumber.testng.FeatureWrapper;
 import io.cucumber.testng.PickleWrapper;
 import io.cucumber.testng.TestNGCucumberRunner;
 
-
 @CucumberOptions(
 		features = "src/main/java/feature", 
 		glue = {"stepdefinition"},
-		tags = "@sanity",
-				monochrome = true,
+		tags = "@regression",
+		monochrome = true,
 		plugin = {
-				//"pretty","json:target/report.xml","json:target/cucumber.json","html:target/cucumber",
-				"io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm"
+				"pretty","html:target/site/cucumber-pretty","json:target/cucumber.json" //For TestNG reports
+				//"pretty","json:target/report.xml","json:target/cucumber.json","html:target/cucumber", //For Local reports
+				//"io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm" - For Allure Reports
 		})
-				//"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"})
 public class CustomAbstractTestNGCucumberRunner extends GridDriverManager{
 
 
@@ -45,4 +44,7 @@ public class CustomAbstractTestNGCucumberRunner extends GridDriverManager{
 	public void tearDownClass() {
 		testNGCucumberRunner.finish();
 	}
+	
+
 }
+

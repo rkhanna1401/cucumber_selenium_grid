@@ -1,8 +1,6 @@
 package stepdefinition;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-
 import Utils.JsonUtils;
 import WebdriverBase.GridDriverManager;
 import io.cucumber.java.Before;
@@ -71,11 +69,13 @@ public class LoginWorkflow {
 	@When("User selects Forgot password")
 	public void user_selects_forgot_password() {
 		workflowManager.getLoginPage(driver).clickForgotPassword();
+		workflowManager.getLoginPage(driver).clicktContinueBtn();
 	}
 
 	@When("User navigated to password reset page")
 	public void user_navigated_to_password_reset_page() {
-		Assert.fail();
+		int i =0;
+		int j =i/0;
 	}
 
 	@Then("User succesfully resets the password")

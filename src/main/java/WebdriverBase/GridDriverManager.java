@@ -1,5 +1,6 @@
 package WebdriverBase;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -8,7 +9,6 @@ import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.Platform;
@@ -25,15 +25,14 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
-import com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter;
 import com.google.gson.JsonObject;
-
 import Utils.GenericUtils;
 import Utils.JsonUtils;
 import Utils.PropertyManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
 
 public class GridDriverManager {
 
@@ -64,9 +63,10 @@ public class GridDriverManager {
 
 	@BeforeSuite
 	public void initServer() {
-		if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON")) {
-		HubNodeConfiguration.configureServer();
-	}
+		if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON") && 
+				PropertyManager.getPropertyHelper("configuration").get("docker").equals("false")) {
+			HubNodeConfiguration.configureServer();
+		}
 		logger = Logger.getLogger(GridDriverManager.class.getName());
 		if(jsonObject==null) {
 			try {
@@ -224,6 +224,7 @@ public class GridDriverManager {
 			}
 			byte[] fileContent = FileUtils.readFileToByteArray(srcFile);
 			Base64StringOfScreenshot = "data:image/png;base64," + Base64.getEncoder().encodeToString(fileContent);
+			Allure.addAttachment(currentTestName, new ByteArrayInputStream(((TakesScreenshot)threadLocalDriver.get()).getScreenshotAs(OutputType.BYTES)));
 
 		}
 	}
@@ -233,7 +234,10 @@ public class GridDriverManager {
 		if(!remoteWebDriverList.isEmpty()) {
 			for(RemoteWebDriver driver : remoteWebDriverList)
 				driver.quit();
-			HubNodeConfiguration.tearDownHub();
+			if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON") && 
+					PropertyManager.getPropertyHelper("configuration").get("docker").equals("false")) {
+				HubNodeConfiguration.tearDownHub();
+			}
 			logger.info("Hub and Node has been shut down");
 		}
 		if(!webDriverList.isEmpty()) {
@@ -244,9 +248,12 @@ public class GridDriverManager {
 
 	}
 
+	@Attachment(type = "image/png")
 	@After
 	public void af0(Scenario scenario) throws InterruptedException, IOException, IllegalMonitorStateException
 	{	
-		ExtentCucumberAdapter.addTestStepScreenCaptureFromPath(Base64StringOfScreenshot);
+		//ExtentCucumberAdapter.addTestStepScreenCaptureFromPath(Base64StringOfScreenshot);
+		if(scenario.isFailed()) {
+			Allure.addAttachment(scenario.getName(), new ByteArrayInputStream(((TakesScreenshot)threadLocalDriver.get()).getScreenshotAs(OutputType.BYTES)));	}
 	}
 }

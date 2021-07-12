@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -104,10 +104,24 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.cucumber.amazon.shopping.TestRunner" hash-for-method="scenario(&quot;Password Reset Test&quot;, &quot;Optional[Login Verification]&quot;)">scenario("Password Reset Test", "Optional[Login Verification]")</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.cucumber.amazon.shopping.TestRunner" hash-for-method="scenario(&quot;Invalid Login Test&quot;, &quot;Optional[Login Verification]&quot;)">scenario("Invalid Login Test", "Optional[Login Verification]")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.cucumber.amazon.shopping.TestRunner" hash-for-method="scenario(&quot;Invalid Login Test&quot;, &quot;Optional[Login Verification]&quot;)">scenario("Invalid Login Test", "Optional[Login Verification]")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -127,69 +141,31 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="scenario(&quot;Password Reset Test&quot;, &quot;Optional[Login Verification]&quot;)">
-                  </a> <!-- scenario("Password Reset Test", "Optional[Login Verification]") -->
+                  <a name="scenario(&quot;Invalid Login Test&quot;, &quot;Optional[Login Verification]&quot;)">
+                  </a> <!-- scenario("Invalid Login Test", "Optional[Login Verification]") -->
                   <span class="method-name">scenario</span>
-                  <span class="parameters">("Password Reset Test", "Optional[Login Verification]")</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Timed out after 30 seconds. Unable to locate the element
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:99)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy22.click(Unknown Source)
-	at webpages.LoginPage.clickForgotPassword(LoginPage.java:56)
-	at stepdefinition.LoginWorkflow.user_selects_forgot_password(LoginWorkflow.java:73)
-	at ✽.User selects Forgot password(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/LoginTest.feature:39)
-Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //a[contains(text(),&apos;Forgot Password&apos;)]] because of the following error:
-SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;//a[contains(text(),&apos;Forgot Password&apos;)]]&apos; is not a valid XPath expression.
+                  <span class="parameters">("Invalid Login Test", "Optional[Login Verification]")</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=91.0.4472.114)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Rishis-MacBook-Pro.local&apos;, ip: &apos;2405:201:d001:6bfe:29a0:1274:50ae:dd14%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;Rishis-MacBook-Pro.local&apos;, ip: &apos;2405:201:d001:6bfe:8918:6e7d:26ec:d048%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;1.8.0_221&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:53522}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 97db9539b2509541a18b2ee9f1211c80
-*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Forgot Password&apos;)]]}
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ca06f2a6f9aac4e31d93f6084e4a47f
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:72)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy22.click(Unknown Source)
-	at webpages.LoginPage.clickForgotPassword(LoginPage.java:56)
-	at stepdefinition.LoginWorkflow.user_selects_forgot_password(LoginWorkflow.java:73)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:114)
-	at WebdriverBase.CustomAbstractTestNGCucumberRunner.scenario(CustomAbstractTestNGCucumberRunner.java:36)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 16 stack frames
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy23.sendKeys(Unknown Source)
+	at webpages.LoginPage.setPassword(LoginPage.java:44)
+	at stepdefinition.LoginWorkflow.user_enter_incorrect_password(LoginWorkflow.java:49)
+	at ✽.User enter incorrect password(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/LoginTest.feature:11)
+... Removed 8 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
@@ -197,6 +173,24 @@ Session ID: 97db9539b2509541a18b2ee9f1211c80
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.cucumber.amazon.shopping.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="scenario(&quot;Invalid Login Test&quot;, &quot;Optional[Login Verification]&quot;)">
+                  </a> <!-- scenario("Invalid Login Test", "Optional[Login Verification]") -->
+                  <span class="method-name">scenario</span>
+                  <span class="parameters">("Invalid Login Test", "Optional[Login Verification]")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -260,16 +254,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'scenario')
 data.setCell(0, 2, 'com.cucumber.amazon.shopping.TestRunner')
-data.setCell(0, 3, 55928);
+data.setCell(0, 3, 22868);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'scenario')
+data.setCell(1, 2, 'com.cucumber.amazon.shopping.TestRunner')
+data.setCell(1, 3, 13115);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 55 seconds</span>
+              <span class="suite-total-time">Total running time: 35 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -302,25 +300,33 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">75 ms</span>
+                <span class="method-start">61 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">scenario("Invalid Login Test", "Optional[Login Verification]")</span>
+                <span class="method-start">538 ms</span>
+              </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">scenario("Password Reset Test", "Optional[Login Verification]")</span>
-                <span class="method-start">5737 ms</span>
+                <span class="method-name">scenario("Invalid Login Test", "Optional[Login Verification]")</span>
+                <span class="method-start">538 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
+                <span class="method-name">captureScreenshot([TestResult name=scenario status=SUCCESS method=CustomAbstractTestNGCucumberRunner.scenario(io.cucum...)</span>
+                <span class="method-start">13663 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
                 <span class="method-name">captureScreenshot([TestResult name=scenario status=FAILURE method=CustomAbstractTestNGCucumberRunner.scenario(io.cucum...)</span>
-                <span class="method-start">61672 ms</span>
+                <span class="method-start">23412 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">62257 ms</span>
+                <span class="method-start">29838 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">67289 ms</span>
+                <span class="method-start">34982 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

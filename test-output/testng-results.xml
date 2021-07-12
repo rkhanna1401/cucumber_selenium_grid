@@ -1,137 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="66" started-at="2021-06-28T18:17:33 IST" finished-at="2021-06-28T18:17:33 IST">
+  <suite name="Suite" duration-ms="41392" started-at="2021-07-07T19:43:20 IST" finished-at="2021-07-07T19:44:02 IST">
     <groups>
       <group name="smoke">
-        <method signature="CustomAbstractTestNGCucumberRunner.scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@5c072e3f]" name="scenario" class="WebdriverBase.CustomAbstractTestNGCucumberRunner"/>
+        <method signature="CustomAbstractTestNGCucumberRunner.scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="scenario" class="WebdriverBase.CustomAbstractTestNGCucumberRunner"/>
       </group> <!-- smoke -->
     </groups>
-    <test name="SmokeTest - Chrome Browser" duration-ms="66" started-at="2021-06-28T18:17:33 IST" finished-at="2021-06-28T18:17:33 IST">
+    <test name="SmokeTest - Chrome Browser" duration-ms="41392" started-at="2021-07-07T19:43:20 IST" finished-at="2021-07-07T19:44:02 IST">
       <class name="com.cucumber.amazon.shopping.TestRunner">
-        <test-method status="PASS" signature="initServer()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@5c072e3f]" name="initServer" is-config="true" duration-ms="46" started-at="2021-06-28T18:17:33 IST" finished-at="2021-06-28T18:17:33 IST">
+        <test-method status="PASS" signature="initServer()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="initServer" is-config="true" duration-ms="91" started-at="2021-07-07T19:43:20 IST" finished-at="2021-07-07T19:43:20 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initServer -->
-        <test-method status="FAIL" signature="setUpClass()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@5c072e3f]" name="setUpClass" is-config="true" duration-ms="42" started-at="2021-06-28T18:17:33 IST" finished-at="2021-06-28T18:17:33 IST">
-          <exception class="java.lang.IllegalArgumentException">
-            <message>
-              <![CDATA[The plugin specification 'ru.yandex.qatools.allure.cucumber6jvm.AllureCucumber6Jvm' has a problem:
-
-Could not load plugin class 'ru.yandex.qatools.allure.cucumber6jvm.AllureCucumber6Jvm'.
-
-Plugin specifications should have the format of PLUGIN[:[PATH|[URI [OPTIONS]]]
-
-Valid values for PLUGIN are: default_summary, html, json, junit, message, null_summary, pretty, progress, rerun, summary, teamcity, testng, timeline, unused, usage
-
-PLUGIN can also be a fully qualified class name, allowing registration of 3rd party plugins. The 3rd party plugin must implement io.cucumber.plugin.Plugin]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: The plugin specification 'ru.yandex.qatools.allure.cucumber6jvm.AllureCucumber6Jvm' has a problem:
-
-Could not load plugin class 'ru.yandex.qatools.allure.cucumber6jvm.AllureCucumber6Jvm'.
-
-Plugin specifications should have the format of PLUGIN[:[PATH|[URI [OPTIONS]]]
-
-Valid values for PLUGIN are: default_summary, html, json, junit, message, null_summary, pretty, progress, rerun, summary, teamcity, testng, timeline, unused, usage
-
-PLUGIN can also be a fully qualified class name, allowing registration of 3rd party plugins. The 3rd party plugin must implement io.cucumber.plugin.Plugin
-at io.cucumber.core.options.PluginOption.createCouldNotLoadClass(PluginOption.java:168)
-at io.cucumber.core.options.PluginOption.parsePluginName(PluginOption.java:146)
-at io.cucumber.core.options.PluginOption.parse(PluginOption.java:101)
-at io.cucumber.core.options.RuntimeOptionsBuilder.addPluginName(RuntimeOptionsBuilder.java:68)
-at io.cucumber.core.options.CucumberOptionsAnnotationParser.addPlugins(CucumberOptionsAnnotationParser.java:87)
-at io.cucumber.core.options.CucumberOptionsAnnotationParser.parse(CucumberOptionsAnnotationParser.java:41)
-at io.cucumber.testng.TestNGCucumberRunner.<init>(TestNGCucumberRunner.java:73)
-at WebdriverBase.CustomAbstractTestNGCucumberRunner.setUpClass(CustomAbstractTestNGCucumberRunner.java:30)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:64)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:364)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:318)
-at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.ClassNotFoundException: ru.yandex.qatools.allure.cucumber6jvm.AllureCucumber6Jvm
-at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
-at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
-at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-at io.cucumber.core.options.PluginOption.parsePluginName(PluginOption.java:140)
-... 19 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="setUpClass" is-config="true" duration-ms="5766" started-at="2021-07-07T19:43:20 IST" finished-at="2021-07-07T19:43:26 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="SKIP" signature="scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@5c072e3f]" name="scenario" duration-ms="0" started-at="2021-06-28T18:17:33 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-06-28T18:17:33 IST">
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[java.lang.NullPointerException]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException
-at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:52)
-at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:148)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:797)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
-at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
-at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:788)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.NullPointerException
-at WebdriverBase.CustomAbstractTestNGCucumberRunner.scenarios(CustomAbstractTestNGCucumberRunner.java:40)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:79)
-at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:48)
-... 12 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+        <test-method status="PASS" signature="scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="scenario" duration-ms="34336" started-at="2021-07-07T19:43:26 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-07-07T19:44:01 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid Login Test"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login Verification]"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- scenario -->
-        <test-method status="FAIL" signature="tearDownClass()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@5c072e3f]" name="tearDownClass" is-config="true" duration-ms="1" started-at="2021-06-28T18:17:33 IST" finished-at="2021-06-28T18:17:33 IST">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at WebdriverBase.CustomAbstractTestNGCucumberRunner.tearDownClass(CustomAbstractTestNGCucumberRunner.java:45)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
-at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:64)
-at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:364)
-at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:318)
-at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
-at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-at java.lang.Thread.run(Thread.java:748)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method status="PASS" signature="scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="scenario" duration-ms="35546" started-at="2021-07-07T19:43:26 IST" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2021-07-07T19:44:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid Login Test"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Login Verification]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- scenario -->
+        <test-method status="PASS" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="captureScreenshot" is-config="true" duration-ms="6" started-at="2021-07-07T19:44:01 IST" finished-at="2021-07-07T19:44:01 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=scenario status=SUCCESS method=CustomAbstractTestNGCucumberRunner.scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshot -->
+        <test-method status="PASS" signature="captureScreenshot(org.testng.ITestResult)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="captureScreenshot" is-config="true" duration-ms="0" started-at="2021-07-07T19:44:02 IST" finished-at="2021-07-07T19:44:02 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=scenario status=SUCCESS method=CustomAbstractTestNGCucumberRunner.scenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- captureScreenshot -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="tearDownClass" is-config="true" duration-ms="20" started-at="2021-07-07T19:44:02 IST" finished-at="2021-07-07T19:44:02 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@5c072e3f]" name="tearDown" is-config="true" duration-ms="1" started-at="2021-06-28T18:17:38 IST" finished-at="2021-06-28T18:17:38 IST">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.cucumber.amazon.shopping.TestRunner@4f51b3e0]" name="tearDown" is-config="true" duration-ms="304" started-at="2021-07-07T19:44:07 IST" finished-at="2021-07-07T19:44:07 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

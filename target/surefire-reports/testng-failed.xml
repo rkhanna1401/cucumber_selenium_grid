@@ -13,7 +13,7 @@
           <include name="initServer"/>
           <include name="tearDown"/>
           <include name="setUpClass"/>
-          <include name="scenario" invocation-numbers="0"/>
+          <include name="scenario" invocation-numbers="1"/>
         </methods>
       </class> <!-- com.cucumber.amazon.shopping.TestRunner -->
     </classes>

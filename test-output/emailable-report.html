@@ -9,51 +9,11 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">SmokeTest - Chrome Browser</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">66</td><td></td><td></td></tr>
+<tr><td><a href="#t0">SmokeTest - Chrome Browser</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">41,392</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SmokeTest - Chrome Browser &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="2">com.cucumber.amazon.shopping.TestRunner</td><td><a href="#m0">setUpClass</a></td><td rowspan="1">1624884453399</td><td rowspan="1">42</td></tr><tr class="failedeven"><td><a href="#m1">tearDownClass</a></td><td rowspan="1">1624884453452</td><td rowspan="1">1</td></tr><tr><th colspan="4">SmokeTest - Chrome Browser &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">com.cucumber.amazon.shopping.TestRunner</td><td><a href="#m2">scenario</a></td><td rowspan="1">1624884453449</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SmokeTest - Chrome Browser &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.cucumber.amazon.shopping.TestRunner</td><td><a href="#m0">scenario</a></td><td rowspan="2">1625667206694</td><td rowspan="2">34336</td></tr><tr class="passedeven"><td><a href="#m1">scenario</a></td></tr></tbody>
 </table>
-<h2>SmokeTest - Chrome Browser</h2><h3 id="m0">com.cucumber.amazon.shopping.TestRunner#setUpClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalArgumentException: The plugin specification &apos;ru.yandex.qatools.allure.cucumber6jvm.AllureCucumber6Jvm&apos; has a problem:
-
-Could not load plugin class &apos;ru.yandex.qatools.allure.cucumber6jvm.AllureCucumber6Jvm&apos;.
-
-Plugin specifications should have the format of PLUGIN[:[PATH|[URI [OPTIONS]]]
-
-Valid values for PLUGIN are: default_summary, html, json, junit, message, null_summary, pretty, progress, rerun, summary, teamcity, testng, timeline, unused, usage
-
-PLUGIN can also be a fully qualified class name, allowing registration of 3rd party plugins. The 3rd party plugin must implement io.cucumber.plugin.Plugin
-	at io.cucumber.core.options.PluginOption.createCouldNotLoadClass(PluginOption.java:168)
-	at io.cucumber.core.options.PluginOption.parsePluginName(PluginOption.java:146)
-	at io.cucumber.core.options.PluginOption.parse(PluginOption.java:101)
-	at io.cucumber.core.options.RuntimeOptionsBuilder.addPluginName(RuntimeOptionsBuilder.java:68)
-	at io.cucumber.core.options.CucumberOptionsAnnotationParser.addPlugins(CucumberOptionsAnnotationParser.java:87)
-	at io.cucumber.core.options.CucumberOptionsAnnotationParser.parse(CucumberOptionsAnnotationParser.java:41)
-	at io.cucumber.testng.TestNGCucumberRunner.&lt;init&gt;(TestNGCucumberRunner.java:73)
-	at WebdriverBase.CustomAbstractTestNGCucumberRunner.setUpClass(CustomAbstractTestNGCucumberRunner.java:30)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.ClassNotFoundException: ru.yandex.qatools.allure.cucumber6jvm.AllureCucumber6Jvm
-	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
-	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
-	at io.cucumber.core.options.PluginOption.parsePluginName(PluginOption.java:140)
-	... 19 more
-... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.cucumber.amazon.shopping.TestRunner#tearDownClass</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException
-	at WebdriverBase.CustomAbstractTestNGCucumberRunner.tearDownClass(CustomAbstractTestNGCucumberRunner.java:45)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 10 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.cucumber.amazon.shopping.TestRunner#scenario</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.RuntimeException: java.lang.NullPointerException
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: java.lang.NullPointerException
-	at WebdriverBase.CustomAbstractTestNGCucumberRunner.scenarios(CustomAbstractTestNGCucumberRunner.java:40)
-	... 12 more
-... Removed 17 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>SmokeTest - Chrome Browser</h2><h3 id="m0">com.cucumber.amazon.shopping.TestRunner#scenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Invalid Login Test&quot;</td><td>&quot;Optional[Login Verification]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.cucumber.amazon.shopping.TestRunner#scenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Invalid Login Test&quot;</td><td>&quot;Optional[Login Verification]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

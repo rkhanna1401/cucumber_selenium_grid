@@ -9,68 +9,31 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">SmokeTest - Chrome Browser</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">62,202</td><td></td><td></td></tr>
+<tr><td><a href="#t0">SmokeTest - Chrome Browser</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">29,905</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SmokeTest - Chrome Browser &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.cucumber.amazon.shopping.TestRunner</td><td><a href="#m0">scenario</a></td><td rowspan="1">1624962096451</td><td rowspan="1">55928</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">SmokeTest - Chrome Browser &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.cucumber.amazon.shopping.TestRunner</td><td><a href="#m0">scenario</a></td><td rowspan="1">1625837670071</td><td rowspan="1">22868</td></tr><tr><th colspan="4">SmokeTest - Chrome Browser &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.cucumber.amazon.shopping.TestRunner</td><td><a href="#m1">scenario</a></td><td rowspan="1">1625837670071</td><td rowspan="1">13115</td></tr></tbody>
 </table>
-<h2>SmokeTest - Chrome Browser</h2><h3 id="m0">com.cucumber.amazon.shopping.TestRunner#scenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Password Reset Test&quot;</td><td>&quot;Optional[Login Verification]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.NoSuchElementException: Timed out after 30 seconds. Unable to locate the element
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:99)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy22.click(Unknown Source)
-	at webpages.LoginPage.clickForgotPassword(LoginPage.java:56)
-	at stepdefinition.LoginWorkflow.user_selects_forgot_password(LoginWorkflow.java:73)
-	at ✽.User selects Forgot password(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/LoginTest.feature:39)
-Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //a[contains(text(),&apos;Forgot Password&apos;)]] because of the following error:
-SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;//a[contains(text(),&apos;Forgot Password&apos;)]]&apos; is not a valid XPath expression.
+<h2>SmokeTest - Chrome Browser</h2><h3 id="m0">com.cucumber.amazon.shopping.TestRunner#scenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Invalid Login Test&quot;</td><td>&quot;Optional[Login Verification]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=91.0.4472.114)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Rishis-MacBook-Pro.local&apos;, ip: &apos;2405:201:d001:6bfe:29a0:1274:50ae:dd14%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;1.8.0_221&apos;
+System info: host: &apos;Rishis-MacBook-Pro.local&apos;, ip: &apos;2405:201:d001:6bfe:8918:6e7d:26ec:d048%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.14.6&apos;, java.version: &apos;1.8.0_221&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:53522}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 97db9539b2509541a18b2ee9f1211c80
-*** Element info: {Using=xpath, value=//a[contains(text(),&apos;Forgot Password&apos;)]]}
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 91.0.4472.114, chrome: {chromedriverVersion: 91.0.4472.101 (af52a90bf870..., userDataDir: /var/folders/fc/c6v4v0jx4sl...}, goog:chromeOptions: {debuggerAddress: localhost:55435}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3ca06f2a6f9aac4e31d93f6084e4a47f
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.access$001(AjaxElementLocator.java:39)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator$SlowLoadingElement.isLoaded(AjaxElementLocator.java:165)
-	at org.openqa.selenium.support.ui.SlowLoadableComponent.get(SlowLoadableComponent.java:72)
-	at org.openqa.selenium.support.pagefactory.AjaxElementLocator.findElement(AjaxElementLocator.java:95)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy22.click(Unknown Source)
-	at webpages.LoginPage.clickForgotPassword(LoginPage.java:56)
-	at stepdefinition.LoginWorkflow.user_selects_forgot_password(LoginWorkflow.java:73)
-	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
-	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
-	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
-	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
-	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
-	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
-	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
-	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
-	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
-	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
-	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
-	at io.cucumber.core.runner.Runner.runPickle(Runner.java:73)
-	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:117)
-	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
-	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:114)
-	at WebdriverBase.CustomAbstractTestNGCucumberRunner.scenario(CustomAbstractTestNGCucumberRunner.java:36)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-... Removed 16 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:106)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy23.sendKeys(Unknown Source)
+	at webpages.LoginPage.setPassword(LoginPage.java:44)
+	at stepdefinition.LoginWorkflow.user_enter_incorrect_password(LoginWorkflow.java:49)
+	at ✽.User enter incorrect password(file:///Users/rishikhanna/Documents/cucumber/shopping/src/main/java/feature/LoginTest.feature:11)
+... Removed 8 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.cucumber.amazon.shopping.TestRunner#scenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Invalid Login Test&quot;</td><td>&quot;Optional[Login Verification]&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
