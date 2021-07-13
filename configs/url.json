@@ -1,4 +1,4 @@
 {
-"huburl":"http://0.0.0.0:4444/wd/hub",
+"huburl":"http://selenium-hub:4444/wd/hub",
 "baseurl":"http://amazon.in"
 }
