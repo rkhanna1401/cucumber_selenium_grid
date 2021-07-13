@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -129,6 +130,9 @@ public class GridDriverManager {
 				try {
 					Thread.sleep(1000);
 					if(browserType.equalsIgnoreCase("chrome")) {
+						ChromeOptions options = new ChromeOptions();
+						options.setExperimentalOption("excludeSwitches", Arrays.asList("test-type"));
+						capabilities.merge(options);
 						capabilities = DesiredCapabilities.chrome();
 					}
 					else if(browserType.equalsIgnoreCase("safari")) {
