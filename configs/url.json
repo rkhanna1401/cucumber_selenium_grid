@@ -1,4 +1,4 @@
 {
-"huburl":"http://192.168.29.15:4444/wd/hub",
+"huburl":"http://xxxx:4444/wd/hub",
 "baseurl":"http://amazon.in"
 }
