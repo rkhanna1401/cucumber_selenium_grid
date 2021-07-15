@@ -80,7 +80,7 @@ public class GridDriverManager {
 		hubIpAddress = JsonUtils.getValFromJson(jsonObject, "huburl","");
 		platform = PropertyManager.getPropertyHelper("configuration").get("platform").toString();
 		browser = PropertyManager.getPropertyHelper("configuration").get("browser").toString();
-		setPlatform(platform);
+		//setPlatform(platform);
 		setDriverLocation(browser);
 		path =  GenericUtils.createOutputFolderPath();
 	}
