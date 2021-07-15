@@ -139,7 +139,9 @@ public class GridDriverManager {
 						capabilities = DesiredCapabilities.safari();
 					}
 					else if(browserType.equalsIgnoreCase("firefox")) {
-						capabilities = DesiredCapabilities.firefox();
+						firefoxOptions = new FirefoxOptions();
+						firefoxOptions.merge(capabilities);
+						//capabilities = DesiredCapabilities.firefox();
 					}
 					threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),capabilities));
 					threadLocalDriver.get().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
