@@ -12,7 +12,7 @@ import io.cucumber.testng.TestNGCucumberRunner;
 @CucumberOptions(
 		features = "src/main/java/feature", 
 		glue = {"stepdefinition"},
-		tags = "@regression",
+		tags = "@smoke",
 		monochrome = true,
 		plugin = {
 				"pretty","html:target/site/cucumber-pretty","json:target/cucumber.json" //For TestNG reports
