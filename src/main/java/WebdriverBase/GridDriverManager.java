@@ -133,7 +133,8 @@ public class GridDriverManager {
 						ChromeOptions options = new ChromeOptions();
 						options.setExperimentalOption("excludeSwitches", Arrays.asList("test-type"));
 						capabilities.merge(options);
-						capabilities = DesiredCapabilities.chrome();
+						//capabilities = DesiredCapabilities.chrome();
+						threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),options));
 					}
 					else if(browserType.equalsIgnoreCase("safari")) {
 						capabilities = DesiredCapabilities.safari();
@@ -143,7 +144,7 @@ public class GridDriverManager {
 						firefoxOptions.merge(capabilities);
 						//capabilities = DesiredCapabilities.firefox();
 					}
-					threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),capabilities));
+					//threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),capabilities));
 					threadLocalDriver.get().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 					threadLocalDriver.get().manage().window().maximize();
 					//driver = new RemoteWebDriver(new URL(hubIpAddress), capabilities);
