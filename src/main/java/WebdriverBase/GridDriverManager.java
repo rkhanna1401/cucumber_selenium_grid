@@ -3,6 +3,7 @@ package WebdriverBase;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,7 +39,8 @@ import io.qameta.allure.Attachment;
 public class GridDriverManager {
 
 	public static ThreadLocal<RemoteWebDriver> threadLocalDriver = new ThreadLocal<RemoteWebDriver>();
-	private static String hubIpAddress;
+	private static String local_huburl;
+	private static String docker_huburl;
 	private JsonObject jsonObject;
 	static ChromeOptions chromeOptions;
 	SafariOptions safariOptions;
@@ -57,6 +59,13 @@ public class GridDriverManager {
 
 	public static GridDriverManager getInstance()
 	{
+		capabilities = new DesiredCapabilities();
+		logger = Logger.getLogger(GridDriverManager.class.getName());
+		platform = PropertyManager.getPropertyHelper("configuration").get("platform").toString();
+		browser = PropertyManager.getPropertyHelper("configuration").get("browser").toString();
+		setPlatform(platform);
+		setDriverLocation(browser);
+		path =  GenericUtils.createOutputFolderPath();
 		if (gridDriverManager==null)
 			gridDriverManager = new GridDriverManager();
 		return gridDriverManager;
@@ -68,7 +77,6 @@ public class GridDriverManager {
 				PropertyManager.getPropertyHelper("configuration").get("docker").equals("false")) {
 			HubNodeConfiguration.configureServer();
 		}
-		logger = Logger.getLogger(GridDriverManager.class.getName());
 		if(jsonObject==null) {
 			try {
 				jsonObject = JsonUtils.SetupJsonConfig(JsonUtils.getConfigsJsonFilePath("url"));
@@ -76,13 +84,8 @@ public class GridDriverManager {
 				e.printStackTrace();
 			}
 		}
-		capabilities = new DesiredCapabilities();
-		hubIpAddress = JsonUtils.getValFromJson(jsonObject, "huburl","");
-		platform = PropertyManager.getPropertyHelper("configuration").get("platform").toString();
-		browser = PropertyManager.getPropertyHelper("configuration").get("browser").toString();
-		//setPlatform(platform);
-		setDriverLocation(browser);
-		path =  GenericUtils.createOutputFolderPath();
+		local_huburl = JsonUtils.getValFromJson(jsonObject, "local_huburl","");
+		docker_huburl = JsonUtils.getValFromJson(jsonObject, "docker_huburl","");
 	}
 
 
@@ -110,6 +113,51 @@ public class GridDriverManager {
 		return driver;
 	}
 
+	public WebDriver getLocalGridDriver(String browserType,String platformType)  {
+
+		if(browserType.equalsIgnoreCase("chrome")) {
+			capabilities = DesiredCapabilities.chrome();
+		}
+		else if(browserType.equalsIgnoreCase("safari")) {
+			capabilities = DesiredCapabilities.safari();
+		}
+		else if(browserType.equalsIgnoreCase("firefox")) {
+			capabilities = DesiredCapabilities.firefox();
+		}
+		try {
+			threadLocalDriver.set(new RemoteWebDriver(new URL(local_huburl),capabilities));
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		threadLocalDriver.get().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		threadLocalDriver.get().manage().window().maximize();
+		return threadLocalDriver.get();
+	}
+
+	public WebDriver getDockerGridDriver(String browserType,String platformType) {
+
+		if(browserType.equalsIgnoreCase("chrome")) {
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("excludeSwitches", Arrays.asList("test-type"));
+			capabilities.merge(options);
+		}
+		else if(browserType.equalsIgnoreCase("safari")) {
+			capabilities = DesiredCapabilities.safari();
+		}
+		else if(browserType.equalsIgnoreCase("firefox")) {
+			firefoxOptions = new FirefoxOptions();
+			firefoxOptions.merge(capabilities);
+		}
+		try {
+			threadLocalDriver.set(new RemoteWebDriver(new URL(docker_huburl),capabilities));
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		threadLocalDriver.get().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		threadLocalDriver.get().manage().window().maximize();
+		return threadLocalDriver.get();
+	}
+
 	public RemoteWebDriver getDriver() {
 		if(threadLocalDriver.get() == null) {
 			setDriver(browser, platform);
@@ -127,30 +175,13 @@ public class GridDriverManager {
 		synchronized (browserType) {
 			if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON"))
 			{
-				try {
-					Thread.sleep(1000);
-					if(browserType.equalsIgnoreCase("chrome")) {
-						ChromeOptions options = new ChromeOptions();
-						options.setExperimentalOption("excludeSwitches", Arrays.asList("test-type"));
-						capabilities.merge(options);
-						//capabilities = DesiredCapabilities.chrome();
-						threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),options));
-					}
-					else if(browserType.equalsIgnoreCase("safari")) {
-						capabilities = DesiredCapabilities.safari();
-					}
-					else if(browserType.equalsIgnoreCase("firefox")) {
-						firefoxOptions = new FirefoxOptions();
-						firefoxOptions.merge(capabilities);
-						//capabilities = DesiredCapabilities.firefox();
-					}
-					//threadLocalDriver.set(new RemoteWebDriver(new URL(hubIpAddress),capabilities));
-					threadLocalDriver.get().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-					threadLocalDriver.get().manage().window().maximize();
-					//driver = new RemoteWebDriver(new URL(hubIpAddress), capabilities);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				getLocalGridDriver(browserType, platformType);
+				remoteWebDriverList.add(threadLocalDriver.get());
+			}
+			else if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON") 
+					&& PropertyManager.getPropertyHelper("configuration").get("docker").equals("true"))
+			{
+				getDockerGridDriver(browserType, platformType);
 				remoteWebDriverList.add(threadLocalDriver.get());
 			}
 			else {

@@ -12,13 +12,13 @@ And User enter incorrect password
 Then Message displayed Wrong UserName & Password
 And User is not logged-in.
 
-@regression
+@smoke
 Examples:
 | email |
 | bhavs62.tandon@gmail.com |
 | rishi.khanna7868@gmail.com |
  
-@smoke
+@regression
 Examples:
 | email |
 | rishi.khanna786@gmail.com | 
