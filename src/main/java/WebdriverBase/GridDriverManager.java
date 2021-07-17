@@ -135,11 +135,12 @@ public class GridDriverManager {
 	}
 
 	public WebDriver getDockerGridDriver(String browserType,String platformType) {
-
+		try {
 		if(browserType.equalsIgnoreCase("chrome")) {
-			ChromeOptions options = new ChromeOptions();
-			options.setExperimentalOption("excludeSwitches", Arrays.asList("test-type"));
-			capabilities.merge(options);
+			chromeOptions = new ChromeOptions();
+			chromeOptions.setExperimentalOption("excludeSwitches", Arrays.asList("test-type"));
+			capabilities.merge(chromeOptions);
+			threadLocalDriver.set(new RemoteWebDriver(new URL(docker_huburl),chromeOptions));
 		}
 		else if(browserType.equalsIgnoreCase("safari")) {
 			capabilities = DesiredCapabilities.safari();
@@ -148,8 +149,8 @@ public class GridDriverManager {
 			firefoxOptions = new FirefoxOptions();
 			firefoxOptions.merge(capabilities);
 		}
-		try {
-			threadLocalDriver.set(new RemoteWebDriver(new URL(docker_huburl),capabilities));
+		
+			//threadLocalDriver.set(new RemoteWebDriver(new URL(docker_huburl),chromeOptions));
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
