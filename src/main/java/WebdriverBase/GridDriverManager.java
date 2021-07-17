@@ -174,7 +174,8 @@ public class GridDriverManager {
 	 */
 	public void setDriver(String browserType,String platformType)  {
 		synchronized (browserType) {
-			if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON"))
+			if(PropertyManager.getPropertyHelper("configuration").get("grid_mode").equals("ON")
+					&& PropertyManager.getPropertyHelper("configuration").get("docker").equals("false"))
 			{
 				getLocalGridDriver(browserType, platformType);
 				remoteWebDriverList.add(threadLocalDriver.get());
